@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+}
+body {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.centered {
+  width: 900px;
+  height: calc(670px - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  padding-top: 4rem;
+  z-index: 1;
+
+  h1 {
+    font-size: 3rem;
+    font-family: "Rokkitt", serif;
+    font-weight: 100;
+    margin: 0;
+  }
+  h2 {
+    font-size: 2rem;
+    font-family: "Rokkitt", serif;
+    font-weight: 800;
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.1rem;
+    padding-bottom: 6rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+    padding: 0rem 7rem;
+  }
+}
+
+.container {
+  background-image: url("./bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 900px;
+  height: 670px;
+}
+
+.row {
+  display: inline-flex;
+  padding-top: 1.25rem;
+  width: 70%;
+  & > ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1.75rem;
+
+    &:first-child {
+      text-align: right;
+    }
+
+    &:last-child {
+      font-weight: 600;
+      text-align: left;
+      padding-left: 0.5rem;
+    }
+  }
+}
