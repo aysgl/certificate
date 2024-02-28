@@ -1,14 +1,17 @@
 import React, { useRef, useState } from 'react';
 import jsPDF from 'jspdf';
 import { toPng } from 'html-to-image';
-import Backgrounds from './bg.png';
+import Backgrounds from './assets/bg.png';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './style.scss';
+import Login from './Login';
 
 const App = () => {
   const containerRef = useRef();
   const [fullname, setFullname] = useState("");
   const [selectedOption, setSelectedOption] = useState("Select choose course");
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const formattedDateString = (dateString) => {
     const formattedDate = new Date(dateString);
@@ -16,11 +19,11 @@ const App = () => {
   };
 
   const courses = [
-    { value: "React Front-end Web Development Course 6 months 300 hour" },
-    { value: "React Native Mobile App Development Course 4 months 200 hour" },
-    { value: "Nodejs Back-end Development Course 4 months 200 hour" },
-    { value: "English Speaking in For Software Professionals 6 months 300 hour" },
-    { value: "Kid's Software Programming Course 4 months 50 hour" }
+    { id: "frontend", value: "React Frontend Web Development Course 6 months 300 hour" },
+    { id: "mobil", value: "React Native Mobile App Development Course 4 months 200 hour" },
+    { id: "backend", value: "Nodejs Backend Development Course 4 months 200 hour" },
+    { id: "english", value: "English Speaking in For Software Professionals 6 months 300 hour" },
+    { id: "kids", value: "Kid's Software Programming Course 4 months 50 hour" }
   ];
 
   const generatePdf = async () => {
@@ -43,7 +46,6 @@ const App = () => {
     }
   };
 
-
   const handleFullnameChange = (e) => {
     setFullname(e.target.value);
   };
@@ -62,32 +64,42 @@ const App = () => {
     return `cert_${Math.floor(Math.random() * (max - min + 1)) + min}`;
   }
 
+  if (!isLoggedIn) {
+    return <Login setIsLoggedIn={setIsLoggedIn} />;
+  }
+
   return (
     <div>
-      <div ref={containerRef} className='container'>
+      <div ref={containerRef} className='wrapper'>
         <div className='centered'>
           <div>
             <svg id="certificate-svg" xmlns="http://www.w3.org/2000/svg" width="900" height="90" viewBox="0 0 900 90">
               <text id="Certificate_of_Achievement_Ayşegül_Avcu" data-name="Certificate of Achievement Ayşegül Avcu" transform="translate(0 34)" fontSize="42" fontFamily="Rokkitt" fontWeight="300" textAnchor="middle" alignmentBaseline="middle">
                 <tspan x="450" y="0">Certificate of Achievement</tspan>
                 <tspan fontSize="32" fontWeight="800">
-                  <tspan x="450" y="44">{fullname ? fullname : "Enter fullname"}</tspan>
+                  {fullname ? <tspan x="450" y="44">{fullname}</tspan> : <tspan x="450" y="44" fontWeight={"100"}>______ ___________</tspan>}
                 </tspan>
               </text>
             </svg>
-
-            <h3>
-              By successfully completing the {" "}
-              <b>
-                {selectedOption ? selectedOption : "Select choose course"}
-              </b>
-              {" "} under the guidance of Udemig Software Academy,
-              <b>{" "}{fullname}</b> has demonstrated proficiency in a
-              comprehensive range of front-end development technologies,
-              project management methodologies, and design tools.
-              <b> Congratulations!</b>
-            </h3>
-            <div className='row'>
+            {selectedOption === "Select choose course" && <div style={{ height: "120px" }}></div>}
+            {selectedOption === courses[0].value &&
+              <h3>
+                By successfully completing the {" "}
+                <b>
+                  {selectedOption}
+                </b>
+                {" "} under the guidance of Udemig Software Academy,
+                {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} has demonstrated proficiency in a
+                comprehensive range of front-end development technologies,
+                project management methodologies, and design tools.
+                <b> Congratulations!</b>
+              </h3>
+            }
+            {selectedOption === courses[1].value && <p>Mobil yazısı gelecek</p>}
+            {selectedOption === courses[2].value && <p>Backend yazısı gelecek</p>}
+            {selectedOption === courses[3].value && <p>English yazısı gelecek</p>}
+            {selectedOption === courses[4].value && <p>Kids yazısı gelecek</p>}
+            <div className='ul-row'>
               <ul>
                 <li>Instructor:</li>
                 <li>Date:</li>
@@ -100,22 +112,28 @@ const App = () => {
               </ul>
             </div>
           </div>
-
         </div>
       </div>
-
-      <div style={{
-        display: "flex", justifyContent: "space-between", width: "900px", paddingTop: "1rem"
-      }}>
-        <input type="text" placeholder='Fullname' value={fullname} onChange={handleFullnameChange} />
-        <select value={selectedOption} onChange={handleSelectChange}>
-          <option disabled>Select choose course</option>
-          {courses.map((course, index) => (
-            <option key={index} value={course.value}>{course.value}</option>
-          ))}
-        </select>
-        <input type="date" value={date} onChange={handleDateChange} />
-        <button disabled={!fullname || selectedOption === "Select choose course"} onClick={generatePdf}>Generate PDF</button>
+      <div className='bg-light p-3'>
+        <div className='row g-2'>
+          <div className='col-md-3 col-6'>
+            <input className='form-control' type="text" placeholder='Fullname' value={fullname} onChange={handleFullnameChange} />
+          </div>
+          <div className='col-md-4 col-6'>
+            <select className='form-control' value={selectedOption} onChange={handleSelectChange}>
+              <option disabled>Select choose course</option>
+              {courses.map((course) => (
+                <option key={course.id} value={course.value}>{course.value}</option>
+              ))}
+            </select>
+          </div>
+          <div className='col-md-2 col-6'>
+            <input className='form-control' type="date" value={date} onChange={handleDateChange} />
+          </div>
+          <div className='col-md-3 col-6'>
+            <button className='btn btn-primary w-100' disabled={!fullname || selectedOption === "Select choose course"} onClick={generatePdf}>Generate PDF</button>
+          </div>
+        </div>
       </div>
     </div>
   );
