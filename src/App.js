@@ -95,10 +95,28 @@ const App = () => {
                 <b> Congratulations!</b>
               </h3>
             }
-            {selectedOption === courses[1].value && <p>Mobil yazısı gelecek</p>}
-            {selectedOption === courses[2].value && <p>Backend yazısı gelecek</p>}
-            {selectedOption === courses[3].value && <p>English yazısı gelecek</p>}
-            {selectedOption === courses[4].value && <p>Kids yazısı gelecek</p>}
+            {selectedOption === courses[1].value && <h3>
+              This is to certify that:
+
+              {" "} {fullname}{" "}
+
+              has successfully completed for four mnths of the <b>{selectedOption}</b> under the guidance of Udemig <b> Congratulations!</b></h3>}
+            {selectedOption === courses[2].value &&
+              <h3>
+                This is to certify that
+                <b> {" "}{fullname} {" "}</b>
+                has successfully completed the Algorithm, Mongo DB, Next JS, Node JS, Express JS, and Projects <b>{selectedOption}</b> for four months. <b> Congratulations!</b>
+              </h3>}
+            {selectedOption === courses[3].value &&
+              <h3>This is to certify that
+                <b> {" "}{fullname} {" "}</b>
+                has successfully completed the <b>{selectedOption}</b> in English
+                under the guidance of Arabuleu & Udemig <b> Congratulations!</b></h3>}
+            {selectedOption === courses[4].value && <p>
+              <h3>This certificate is awarded to <b> {" "}{fullname} {" "}</b>
+                For successfully completing the ……months Algorithm, HTML, CSS, GIT, and JavaScript <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
+              </h3>
+            </p>}
             <div className='ul-row'>
               <ul>
                 <li>Instructor:</li>
