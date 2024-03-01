@@ -96,11 +96,11 @@ const App = () => {
               </h3>
             }
             {selectedOption === courses[1].value && <h3>
-              This is to certify that:
+              This is to certify that
 
               {" "} {fullname}{" "}
 
-              has successfully completed for four mnths of the <b>{selectedOption}</b> under the guidance of Udemig <b> Congratulations!</b></h3>}
+              has successfully completed for four months of the <b>{selectedOption}</b> under the guidance of Udemig <b> Congratulations!</b></h3>}
             {selectedOption === courses[2].value &&
               <h3>
                 This is to certify that
