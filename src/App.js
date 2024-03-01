@@ -19,11 +19,11 @@ const App = () => {
   };
 
   const courses = [
-    { id: "frontend", value: "React Frontend Web Development Course 6 months 300 hour" },
-    { id: "mobil", value: "React Native Mobile App Development Course 4 months 200 hour" },
-    { id: "backend", value: "Nodejs Backend Development Course 4 months 200 hour" },
-    { id: "english", value: "English Speaking in For Software Professionals 6 months 300 hour" },
-    { id: "kids", value: "Kid's Software Programming Course 4 months 50 hour" }
+    { value: "React Frontend Web Development Course 6 months 300 hour" },
+    { value: "React Native Mobile App Development Course 4 months 200 hour" },
+    { value: "Nodejs Backend Development Course 4 months 200 hour" },
+    { value: "English Speaking in For Software Professionals 6 months 300 hour" },
+    { value: "Web Frontend Development Online Training 4 months 50 hour" }
   ];
 
   const generatePdf = async () => {
