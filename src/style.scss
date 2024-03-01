@@ -6,10 +6,6 @@
 }
 body {
   font-family: "Roboto Flex", sans-serif;
-  background-image: url("./assets/bg-2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top right;
 }
 
 .centered {
@@ -91,10 +87,18 @@ body {
   font-size: 12px;
   padding: 1rem 2rem;
   // border-radius: 0px;
-  &:hover {
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active,
+  &:first-child:active {
     background-color: #596eba;
     border-color: #596eba;
   }
+}
+.btn:disabled {
+  background-color: rgba(black, 0.3);
+  border-color: rgba(black, 0);
 }
 
 .form-control {
