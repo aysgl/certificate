@@ -104,16 +104,16 @@ const Home = () => {
                         {selectedOption === courses[2].value &&
                             <h3>
                                 This is to certify that
-                                <b>  {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}</b>
+                                {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
                                 has successfully completed the Algorithm, Mongo DB, Next JS, Node JS, Express JS, and Projects <b>{selectedOption}</b> for four months. <b> Congratulations!</b>
                             </h3>}
                         {selectedOption === courses[3].value &&
                             <h3>This is to certify that
-                                <b>  {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}</b>
+                                {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
                                 has successfully completed the <b>{selectedOption}</b> in English
                                 under the guidance of Arabuleu & Udemig <b> Congratulations!</b></h3>}
                         {selectedOption === courses[4].value && <p>
-                            <h3>This certificate is awarded to <b>{" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}</b>
+                            <h3>This certificate is awarded to {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
                                 For successfully completing the Algorithm, HTML, CSS, GIT, and JavaScript <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
                             </h3>
                         </p>}
