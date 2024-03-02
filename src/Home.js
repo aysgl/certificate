@@ -23,9 +23,9 @@ const Home = () => {
         { value: "React Native Mobile App Development Course 4 months 200 hours" },
         { value: "Nodejs Backend Development Course 4 months 200 hours" },
         { value: "English Speaking in For Software Professionals 6 months 300 hours" },
-        { value: "Basic Level Web Frontend Development Online Training for Kids 4 months 50 hours" },
-        { value: "Intermediate Level Web Frontend Development Online Training for Kids 4 months 50 hours" },
-        { value: "Advanced Level Web Frontend Development Online Training  for Kids 4 months 50 hours" }
+        { value: "Basic Level Web Frontend Development Online Training For Kids 4 months 50 hours" },
+        { value: "Intermediate Level Web Frontend Development Online Training For Kids 4 months 50 hours" },
+        { value: "Advanced Level Web Frontend Development Online Training For Kids 4 months 50 hours" }
     ];
 
     const generatePdf = async () => {
@@ -116,17 +116,17 @@ const Home = () => {
                                 under the guidance of Arabuleu & Udemig <b> Congratulations!</b></h3>}
                         {selectedOption === courses[4].value && <p>
                             <h3>This certificate is awarded to {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
-                                For successfully completing <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
+                                for successfully completing <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
                             </h3>
                         </p>}
                         {selectedOption === courses[5].value && <p>
                             <h3>This certificate is awarded to {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
-                                For successfully completing <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
+                                for successfully completing <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
                             </h3>
                         </p>}
                         {selectedOption === courses[6].value && <p>
                             <h3>This certificate is awarded to {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
-                                For successfully completing <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
+                                for successfully completing <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
                             </h3>
                         </p>}
                         <div className='ul-row'>
