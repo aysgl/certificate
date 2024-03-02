@@ -119,6 +119,16 @@ const Home = () => {
                                 For successfully completing the Algorithm, HTML, CSS, GIT, and JavaScript <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
                             </h3>
                         </p>}
+                                    {selectedOption === courses[5].value && <p>
+                            <h3>This certificate is awarded to {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
+                                For successfully completing the Algorithm, HTML, CSS, GIT, and JavaScript <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
+                            </h3>
+                        </p>}
+                                    {selectedOption === courses[6].value && <p>
+                            <h3>This certificate is awarded to {" "}{fullname ? <b>{fullname}</b> : "_____ _________"} {" "}
+                                For successfully completing the Algorithm, HTML, CSS, GIT, and JavaScript <b>{selectedOption}</b> under the guidance of Udemig. <b> Congratulations!</b>
+                            </h3>
+                        </p>}
                         <div className='ul-row'>
                             <ul>
                                 <li>Instructor:</li>
