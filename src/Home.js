@@ -19,10 +19,10 @@ const Home = () => {
     };
 
     const courses = [
-        { value: "React Frontend Web Development Course 6 months 300 hours" },
+        { value: "React Frontend Web Development Course 6 months 400 hours" },
         { value: "React Native Mobile App Development Course 4 months 200 hours" },
         { value: "Nodejs Backend Development Course 4 months 200 hours" },
-        { value: "English Speaking in For Software Professionals 6 months 300 hours" },
+        { value: "English Speaking in For Software Professionals 6 months 400 hours" },
         { value: "Basic Level Web Frontend Development Online Training For Kids 4 months 50 hours" },
         { value: "Intermediate Level Web Frontend Development Online Training For Kids 4 months 50 hours" },
         { value: "Advanced Level Web Frontend Development Online Training For Kids 4 months 50 hours" }
